@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Classes</title>
+</head>
+<body>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js" integrity="sha512-asxKqQghC1oBShyhiBwA+YgotaSYKxGP1rcSYTDrB0U6DxwlJjU59B67U8+5/++uFjcuVM8Hh5cokLjZlhm3Vg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <canvas id="myChart"></canvas>
+<script>
+  var ctx = document.getElementById("myChart");
+  var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Math', 'English', 'History', 'Science', 'Computer Science','Other'],
+      datasets: [{
+        label:'# of Votes',
+        data: [6,0,1,2,3,2],
+        backgroundColor: [
+          'rgba(0, 150, 255, 0.6)',
+          'rgba(255, 30, 0, 0.6)',
+          'rgba(255, 255, 0, 0.5)',
+          'rgba(0, 255, 50, 0.4)',
+          'rgba(36,39,232,0.56)',
+          'rgba(100, 0, 200, 0.2)'
+        ],
+        borderColor: [
+          'rgba(50, 150, 255, 1)',
+          'rgba(255, 30,0 , 1)',
+          'rgb(211,211,57)',
+          'rgba(0, 255, 50, 1)',
+          'rgba(4,36,140,0.95)',
+          'rgba(100, 0, 200, 1)'
+        ],
+        borderWidth:4
+      }]
+    },
+    options:{
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      },
+      indexAxis: 'y'
+    }
+  })
+</script>
+</body>
+</html>
