@@ -17,24 +17,20 @@
                 data:[86, 71, 13, 45, 32, 10, 23, 93, 10, 21, 23, 12],
                 label:'Candy',
                 borderColor: 'rgba(120, 120, 255, 1)'
-            },
-            {
+            },{
                 data:[100, 21, 113, 0, 213, 23, 183, 109, 10, 12, 83,21],
                 label:'Clothes',
                 borderColor: 'rgba(255, 100, 255, 1)'
-            },
-            {
+            },{
                 data:[0, 21, 35, 12, 0 , 0, 12, 30, 42, 10, 23, 1],
                 label:'Amazon',
                 borderColor: 'rgba(100, 200, 100, 1)'
-            },
-            {
+            },{
                 data:[13, 0, 0, 0, 20, 30, 0, 0, 0, 10, 21, 23],
                 label:'Movies',
                 borderColor: 'rgba(236,232,98,1)'
             }]
-        },
-        options:{
+        }, options:{
             plugins:{
                 title: {
                     display: true,
@@ -47,6 +43,95 @@
         }
     });
 </script>
-
+    <canvas id="chart2"></canvas>
+    <script>
+        var cty = document.getElementById('chart2');
+        var nextChart = new Chart(cty, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'Dataset1',
+                    backgroundColor: 'rgba(255, 200, 50, 1)',
+                    pointBackgroundColor: 'rgba(255, 200, 50, 1)',
+                    pointRadius: 4,
+                    data: [
+                        {x:7, y:10},
+                        {x:8, y:18},
+                        {x:11, y:25},
+                        {x:15, y:15},
+                        {x: 16, y:17},
+                        {x: 21, y:32},
+                        {x: 25, y:12},
+                        {x: 31, y:17}
+                    ]
+                },{
+                    label: 'Dataset1',
+                    backgroundColor: 'rgba(50, 200, 50, 1)',
+                    pointBackgroundColor: 'rgba(50, 200, 50, 1)',
+                    pointRadius: 4,
+                    data: [
+                        {x:1, y:10},
+                        {x:7, y:13},
+                        {x:15, y:16},
+                        {x:17, y:12},
+                        {x: 19, y:23},
+                        {x: 22, y:30},
+                        {x: 24, y:14},
+                        {x: 29, y:17}
+                    ]
+                },{
+                    label: 'Dataset3',
+                    backgroundColor: 'rgb(71, 229, 255, 1)',
+                    pointBackgroundColor: 'rgba(71, 229, 255, 1)',
+                    pointRadius: 4,
+                    data: [
+                        {x:1, y:14},
+                        {x:3, y:13},
+                        {x:5, y:21},
+                        {x:13, y:12},
+                        {x: 21, y:19},
+                        {x: 23, y:21},
+                        {x: 27, y:12},
+                        {x: 30, y:18},
+                        {x: 34, y:12},
+                        {x: 39, y:12}
+                    ]
+                },{
+                    label: 'Dataset4',
+                    backgroundColor: 'rgb(227, 24, 24, 1)',
+                    pointBackgroundColor: 'rgb(227, 24, 24, 1)',
+                    pointRadius: 4,
+                    data: [
+                        {x:1, y:4},
+                        {x:5, y:12},
+                        {x:13, y:17},
+                        {x:15, y:23},
+                        {x: 18, y:12},
+                        {x: 23, y:32},
+                        {x: 27, y:12},
+                        {x: 31, y:23},
+                        {x: 33, y:13},
+                        {x: 36, y:32}
+                    ]
+                }]
+            },
+            options: {
+                scales: {
+                    xAxis:{
+                        beginAtZero: true
+                    },
+                    yAxis:{
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    title:{
+                        display: true,
+                        text: 'Sales'
+                    }
+                }
+            }
+        })
+    </script>
 </body>
 </html>
