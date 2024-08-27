@@ -8,7 +8,7 @@
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js" integrity="sha512-asxKqQghC1oBShyhiBwA+YgotaSYKxGP1rcSYTDrB0U6DxwlJjU59B67U8+5/++uFjcuVM8Hh5cokLjZlhm3Vg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<div style="width: 200px">
+<div style="width: 300px">
   <canvas id="myChart"></canvas>
 </div>
 <script>
@@ -19,7 +19,7 @@
       labels: ['Red', 'Blue', 'Yellow'],
       datasets: [{
         label: 'My First Doughnut Today',
-        data:[300, 50, 200],
+        data:[300, 50, 200, 80, 130, 230],
         backgroundColor:[
                 'rgba(255, 99, 150)',
                 'rgba(50, 150, 240)',
@@ -30,7 +30,7 @@
     }
   })
 </script>
-<div style="width: 200px">
+<div style="width: 300px">
   <canvas id="myChart2"></canvas>
 </div>
 <script>
@@ -52,12 +52,30 @@
     }
   })
 </script>
-<div style="width: 200px">
+<div style="width: 300px">
   <canvas id="myChart3"></canvas>
 </div>
 <script>
   var ctz = document.getElementById('myChart3');
-  var myChart = new Chart(ctz,{})
+  var myChart = new Chart(ctz,{
+      type: 'polarArea',
+      data: {
+          labels: [
+              'Red', 'Green', 'Yellow', 'Grey', 'Blue'
+          ],
+          datasets: [{
+              label: 'Polar Area Chart',
+              data: [11,10,15,3,2],
+              backgroundColor: [
+                  'rgb(255,100,130)',
+                  'rgb(80,190,190)',
+                  'rgb(255,200,85)',
+                  'rgb(201,203,203)',
+                  'rgb(50,160,240)'
+              ]
+          }]
+      }
+  })
 </script>
 </body>
 </html>
