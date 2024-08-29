@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js" integrity="sha512-asxKqQghC1oBShyhiBwA+YgotaSYKxGP1rcSYTDrB0U6DxwlJjU59B67U8+5/++uFjcuVM8Hh5cokLjZlhm3Vg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<div style='width: 900px'>
+  <canvas id="myChart"></canvas>
+</div>
+<script>
+  var ctx = document.getElementById('myChart');
+  var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'],
+      datasets: [{
+        data:[1.05, 1.04, 0.98, 1, 0.98, 0.95, 0.93, 0.91, 0.89, 0.87, 0.85, 0.84, 0.82, 0.80, 0.79],
+        label:'Growth Rate',
+        borderColor: 'rgba(120, 120, 255, 1)'
+      }]
+    }, options: {
+      scales: {
+        xAxis:{
+          beginAtZero: true
+        },
+        yAxis:{
+          beginAtZero: true
+        }
+      },
+      plugins: {
+        title:{
+          display: true,
+          text: 'Annual Growth Rate % For Argentina'
+        },
+        legend:{
+          position: 'left'
+        }
+      }
+    }
+  });
+</script>
+<br>
+<div style="width: 400px">
+  <canvas id="myChart2"></canvas>
+</div>
+<script>
+  var cty = document.getElementById('myChart2');
+  var myChart = new Chart(cty,{
+    type: 'pie',
+    data: {
+      labels: ['Male', 'Female'],
+      datasets: [{
+        label: 'IMR',
+        data:[9.92, 7.91],
+        backgroundColor:[
+          'rgb(152,207,255)',
+          'rgb(136,51,255)'
+        ],
+        hoverOffset: 1
+      }]
+    },options: {
+      plugins: {
+        title: {
+          display: true,
+          text: 'Infant Mortality Rates'
+        },
+      }
+    }
+  })
+</script>
+<div style='width: 800px'>
+  <canvas id="myChart3"></canvas>
+</div>
+<script>
+  var ctx = document.getElementById("myChart3");
+  var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'],
+      datasets: [{
+        label:'Total Population',
+        data: [41358093,	41791721,	42216144,	42635451,	43057355, 43474406,	43886223,	44292731,	44693790,	45089449,	45479650,	45864941,	46245668,	46621847,	46994384
+        ],
+        backgroundColor: [
+          'rgba(0, 0, 255, 0.2)',
+        ],
+        borderColor: [
+          'rgba(0, 0, 255, 0.6)',
+        ],
+        borderWidth:4
+      }]
+    },
+    options:{
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      },
+      indexAxis: 'x'
+    }
+  })
+</script>
+</body>
+</html>
