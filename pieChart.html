@@ -16,14 +16,17 @@
   var myChart = new Chart(ctx,{
     type: 'doughnut',
     data: {
-      labels: ['Red', 'Blue', 'Yellow'],
+      labels: ['Pink', 'Purple', 'Yellow', 'Cyan', 'Green', 'Orange'],
       datasets: [{
         label: 'My First Doughnut Today',
         data:[300, 50, 200, 80, 130, 230],
         backgroundColor:[
-                'rgba(255, 99, 150)',
-                'rgba(50, 150, 240)',
-                'rgba(255, 200, 80)'
+            'rgb(255,43,112)',
+            'rgb(109,57,243)',
+            'rgb(255,214,128)',
+            'rgb(80,249,255)',
+            'rgb(130,255,80)',
+            'rgb(255,153,80)'
         ],
         hoverOffset: 1
       }]
@@ -38,14 +41,17 @@
   var myChart = new Chart(cty,{
     type: 'pie',
     data: {
-      labels: ['Red', 'Blue', 'Yellow'],
+      labels: ['Purple', 'Sky', 'Peach', 'Magenta', 'Green', 'Red'],
       datasets: [{
         label: 'My First Doughnut Today',
-        data:[300, 50, 200],
+        data:[300, 50, 200, 30, 100, 150],
         backgroundColor:[
-          'rgba(255, 99, 150)',
-          'rgba(50, 150, 240)',
-          'rgba(255, 200, 80)'
+            'rgb(136,51,255)',
+            'rgb(152,207,255)',
+            'rgb(255,225,172)',
+            'rgb(255,0,211)',
+            'rgb(0,255,22)',
+            'rgb(255,0,0)'
         ],
         hoverOffset: 1
       }]
@@ -61,17 +67,20 @@
       type: 'polarArea',
       data: {
           labels: [
-              'Red', 'Green', 'Yellow', 'Grey', 'Blue'
+              'Pink', 'Cyan', 'Yellow', 'Grey', 'Blue', 'Green', 'Purple', 'Orange'
           ],
           datasets: [{
               label: 'Polar Area Chart',
-              data: [11,10,15,3,2],
+              data: [11,10,15,3,2, 5,9,7],
               backgroundColor: [
-                  'rgb(255,100,130)',
+                  'rgb(255,110,139)',
                   'rgb(80,190,190)',
                   'rgb(255,200,85)',
                   'rgb(201,203,203)',
-                  'rgb(50,160,240)'
+                  'rgb(50,160,240)',
+                  'rgb(110,255,68)',
+                  'rgb(172,70,255)',
+                  'rgb(240,101,50)'
               ]
           }]
       }
