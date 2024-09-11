@@ -1,106 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+
 <body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js" integrity="sha512-asxKqQghC1oBShyhiBwA+YgotaSYKxGP1rcSYTDrB0U6DxwlJjU59B67U8+5/++uFjcuVM8Hh5cokLjZlhm3Vg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<div style='width: 900px'>
-  <canvas id="myChart"></canvas>
-</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js"
+        integrity="sha512-asxKqQghC1oBShyhiBwA+YgotaSYKxGP1rcSYTDrB0U6DxwlJjU59B67U8+5/++uFjcuVM8Hh5cokLjZlhm3Vg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<canvas id="myChart"></canvas>
+
 <script>
-  var ctx = document.getElementById('myChart');
-  var myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: ['2000', '2001', '2002', '2003', '2004', '2005','2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'],
-      datasets: [{
-        data:[1.121,	1.029,	1.041,	1.032,	1.115,	1.041,	0.954,	0.91,	1.06,	0.966, 1.047,	1.039,	0.982	,0.995,	0.975,	0.953,	0.932,	0.912,	0.891,	0.872,	0.852,	0.835,	0.818,	0.802,	0.789
-        ],
-        label:'Growth Rate',
-        borderColor: 'rgba(120, 120, 255, 1)'
-      }]
-    }, options: {
-      scales: {
-        xAxis:{
-          beginAtZero: true
+    var ctx = document.getElementById('myChart');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022'],
+            datasets: [{
+                data: [1.133277022, 1.09917146, 1.07353835, 1.032360859, 1.015336684, 1.033476224, 1.034671736, 1.006297331, 0.992294094, 1.014283893, 0.255582398, 1.15305928, 1.136905694, 1.1191092, 1.099461091, 1.078001344, 1.057181578, 1.037133897, 1.015808349, 0.993397493, 0.970053991, 0.947490959, 0.925835474],
+                label: 'Argentina',
+                backgroundColor: 'rgb(0,121,255)',
+                borderColor: 'rgb(0,121,255)'
+            }, {
+                data: [1.619831406, 1.575532372, 1.534866916, 1.481131571, 1.428170531, 1.365652339, 1.298865177, 1.239967443, 1.167873546, 1.131541306, 1.126884715, 1.093583074, 1.039665, 0.990034781, 0.947136923, 0.941994067, 1.068611891, 1.512289606, 1.895586751, 1.830746942, 1.470102032, 1.143820916, 0.691481571],
+                label: 'Colombia',
+                backgroundColor: 'rgb(255,50,50)',
+                borderColor: 'rgb(255,50,50)'
+            }, {
+                data: [0.541324962, 0.497735084, 0.403611037, 0.264364921, 0.166541088, 0.113683039, 0.10866542, 0.116535331, 0.139067397,0.19152206, 0.224313676, 0.240409128, 0.253703132, 0.267668154, 0.282083193, 0.297587135, 0.309530574, 0.328384513, 0.321216886, 0.246753839, 0.141387932, 0.039880674, 0.019744819, -0.082446609, -0.101211066,
+                ],
+                label: 'Uruguay',
+                backgroundColor: 'rgb(118,255,50)',
+                borderColor: 'rgb(118,255,50)'
+            }]
         },
-        yAxis:{
-          beginAtZero: true
+        options: {
+            scales: {
+                xAxis: {
+                    beginAtZero: true
+                },
+                yAxis: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Annual Population Growth Rate %'
+                },
+                legend: {
+                    position: 'left'
+                }
+            }
         }
-      },
-      plugins: {
-        title:{
-          display: true,
-          text: 'Annual Growth Rate % For Argentina'
-        },
-        legend:{
-          position: 'left'
-        }
-      }
-    }
-  });
+    });
 </script>
+
 <br>
-<div style="width: 400px">
-  <canvas id="myChart2"></canvas>
-</div>
+
+<canvas id="myChart2"></canvas>
+
 <script>
-  var cty = document.getElementById('myChart2');
-  var myChart = new Chart(cty,{
-    type: 'pie',
-    data: {
-      labels: ['Male', 'Female'],
-      datasets: [{
-        label: 'IMR',
-        data:[9.92, 7.91],
-        backgroundColor:[
-          'rgb(152,207,255)',
-          'rgb(136,51,255)'
-        ],
-        hoverOffset: 1
-      }]
-    },options: {
-      plugins: {
-        title: {
-          display: true,
-          text: 'Infant Mortality Rates'
+    var cty = document.getElementById('myChart2');
+    var nextChart = new Chart(cty, {
+        type: 'scatter',
+        data: {
+            datasets: [{
+                label: 'Argentina',
+                backgroundColor: 'rgb(0,121,255)',
+                pointBackgroundColor: 'rgb(0,121,255)',
+                pointRadius: 4,
+                data: [
+                    { x: 2001, y: 2.591 },
+                    { x: 2002, y: 2.531 },
+                    { x: 2003, y: 2.493 },
+                    { x: 2004, y: 2.43 },
+                    { x: 2005, y: 2.426 },
+                    { x: 2006, y: 2.4 },
+                    { x: 2007, y: 2.37 },
+                    { x: 2008, y: 2.341 },
+                    { x: 2009, y: 2.344 },
+                    { x: 2010, y: 2.346 },
+                    { x: 2011, y: 2.338 },
+                    { x: 2012, y: 2.33 },
+                    { x: 2013, y: 2.322 },
+                    { x: 2014, y: 2.312 },
+                    { x: 2015, y: 2.301 },
+                    { x: 2016, y: 2.241 },
+                    { x: 2017, y: 2.168 },
+                    { x: 2018, y: 2.039 },
+                    { x: 2019, y: 1.994 },
+                    { x: 2020, y: 1.911 },
+                    { x: 2021, y: 1.885 }
+                ]
+            }, {
+                label: 'Colombia',
+                backgroundColor: 'rgb(255,50,50)',
+                pointBackgroundColor: 'rgb(255,50,50)',
+                pointRadius: 4,
+                data: [
+                    { x: 2001, y: 2.516 },
+                    { x: 2002, y: 2.458 },
+                    { x: 2003, y: 2.395 },
+                    { x: 2004, y: 2.33 },
+                    { x: 2005, y: 2.263 },
+                    { x: 2006, y: 2.198 },
+                    { x: 2007, y: 2.137 },
+                    { x: 2008, y: 2.081 },
+                    { x: 2009, y: 2.033 },
+                    { x: 2010, y: 1.992 },
+                    { x: 2011, y: 1.958 },
+                    { x: 2012, y: 1.93 },
+                    { x: 2013, y: 1.905 },
+                    { x: 2014, y: 1.883 },
+                    { x: 2015, y: 1.863 },
+                    { x: 2016, y: 1.843 },
+                    { x: 2017, y: 1.818 },
+                    { x: 2018, y: 1.787 },
+                    { x: 2019, y: 1.765 },
+                    { x: 2020, y: 1.737 },
+                    { x: 2021, y: 1.717 }
+                ]
+            },{
+                label: 'Uruguay',
+                backgroundColor: 'rgb(118,255,50)',
+                pointBackgroundColor: 'rgb(118,255,50)',
+                pointRadius: 4,
+                data: [
+                    { x: 2001, y: 2.132 },
+                    { x: 2002, y: 2.142 },
+                    { x: 2003, y: 2.101 },
+                    { x: 2004, y: 2.09 },
+                    { x: 2005, y: 2.097 },
+                    { x: 2006, y: 2.07 },
+                    { x: 2007, y: 2.048 },
+                    { x: 2008, y: 2.03 },
+                    { x: 2009, y: 2.018 },
+                    { x: 2010, y: 2.011 },
+                    { x: 2011, y: 2.008 },
+                    { x: 2012, y: 2.006 },
+                    { x: 2013, y: 2.01 },
+                    { x: 2014, y: 1.998 },
+                    { x: 2015, y: 2.023 },
+                    { x: 2016, y: 1.945 },
+                    { x: 2017, y: 1.796 },
+                    { x: 2018, y: 1.658 },
+                    { x: 2019, y: 1.546 },
+                    { x: 2020, y: 1.477 },
+                    { x: 2021, y: 1.493 }
+                ]
+            }]
         },
-      }
-    }
-  })
-</script>
-<div style='width: 800px'>
-  <canvas id="myChart3"></canvas>
-</div>
-<script>
-  var ctx = document.getElementById("myChart3");
-  var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['2000', '2001', '2002', '2003', '2004', '2005','2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'],
-      datasets: [{
-        label:'Total Population',
-        data: [37335675,	37739190,	38131971,	38529402,	38945354,	39367281,	39761782,	40134011,	40531409,	40943942,	41358093,	41791721,	42216144,	42635451,	43057355,	43474406,	43886223,	44292731,	44693790,	45089449,	45479650	,45864941	,46245668,	46621847	,46994384],
-        backgroundColor: [
-          'rgba(0, 0, 255, 0.2)',
-        ],
-        borderColor: [
-          'rgba(0, 0, 255, 0.6)',
-        ],
-        borderWidth:4
-      }]
-    },
-    options:{
-      scales: {
-        y: {
-          beginAtZero: true
+        options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Total Fertility Rates'
+                }
+            }
         }
-      },
-      indexAxis: 'x'
-    }
-  })
+    })
 </script>
+
+<canvas id="myChart3"></canvas>
+
+
+<script>
+    var ctx = document.getElementById("myChart3");
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022'],
+            datasets: [{
+                label: 'Argentina Population',
+                data: [37335675, 37739190, 38131971, 38529402, 38945354, 39367281, 39761782, 40134011, 40531409, 40943942, 41358093, 41791721, 42216144, 42635451, 43057355, 43474406, 43886223, 44292731, 44693790, 45089449, 45479650, 45864941, 46245668],
+                backgroundColor: [
+                    'rgba(0,121,255,0.6)'
+                ],
+                borderColor: [
+                    'rgb(0,134,255)'
+                ],
+                borderWidth: 4
+            },{
+                label: 'Colombia Population',
+                data: [39215135, 39837875, 40454050, 41057687, 41648268, 42220940, 42772910, 43306582, 43815313, 44313917, 44816108, 45308899, 45782417, 46237930, 46677947, 47119728, 47625955, 48351671, 49276961, 50187406, 50930662, 51516562, 51874024,
+                ],
+                backgroundColor: [
+                    'rgba(255,50,50,0.52)',
+                ],
+                borderColor: [
+                    'rgb(255,50,50)',
+                ],
+                borderWidth: 2
+            },{
+                label: 'Uruguay Population',
+                data: [3292224, 3300939, 3306441, 3310202, 3313801, 3317665, 3322282, 3328651, 3336126, 3344156, 3352651, 3361637, 3371133, 3391662, 3402818, 3413766, 3422200, 3427042, 3428409, 3429086, 3426260, 3422794,
+                ],
+                backgroundColor: [
+                    'rgba(118,255,50,0.54)',
+                ],
+                borderColor: [
+                    'rgb(118,255,50)',
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            indexAxis: 'y'
+        }
+    })
+</script>
+
 </body>
+
 </html>
